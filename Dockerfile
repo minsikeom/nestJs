@@ -9,9 +9,20 @@ COPY package*.json ./
 RUN npm install
 RUN npm i --save-dev webpack-node-externals run-script-webpack-plugin webpack
 RUN npm i typeorm @nestjs/typeorm typeorm-extension mysql2
+RUN npm install -g @nestjs/cli
 RUN npm install @nestjs/config dotenv
 RUN npm install @nestjs/mapped-types 
+RUN npm install class-validator
+RUN npm install @nestjs/axios axios
 
+# 크론
+RUN npm install node-cron
+
+# 트론 네트워크
+RUN npm install tronweb 
+
+#몽고 DB 연결
+RUN npm install @nestjs/mongoose mongoose
 
 # 4. 애플리케이션 소스 코드 복사
 COPY . .

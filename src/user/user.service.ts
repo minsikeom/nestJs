@@ -14,7 +14,8 @@ export class UserService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    const user = this.UserRepository.create(createUserDto);
+    return this.UserRepository.save(user);
   }
 
   findAll(): Promise<User[]> {
@@ -33,3 +34,5 @@ export class UserService {
     return `This action removes a #${id} user`;
   }
 }
+
+
